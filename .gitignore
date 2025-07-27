@@ -1,0 +1,12 @@
+# Archivos y carpetas creados por Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+crash.log
+
+# Archivos del sistema operativo o editores
+.DS_Store
+*.swp
+.idea/
+.vscode/
