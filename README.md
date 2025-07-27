@@ -4,15 +4,15 @@
 Este proyecto tiene como objetivo desplegar una arquitectura MEAN (MongoDB, Express, Angular, Node.js) utilizando múltiples máquinas virtuales en AWS. La infraestructura está definida como código con Terraform y está dividida en módulos independientes.
 
 ## Estructura del repositorio
-project-root/
-├── main.tf # Instancia los módulos principales
-├── variables.tf # Variables globales
-├── outputs.tf # Outputs globales
-├── .gitignore
-├── README.md
-└── modules/
-├── network/ # Módulo para VPC, subredes y gateway
-└── app/ # Módulo para instancias App con Node.js + Nginx
+MEANTERRAFORM/<br>
+├── main.tf # Instancia los módulos principales<br>
+├── variables.tf # Variables globales<br>
+├── outputs.tf # Outputs globales<br>
+├── .gitignore<br>
+├── README.md<br>
+└── modules/<br>
+├── network/ # Módulo para VPC, subredes y gateway<br>
+└── app/ # Módulo para instancias App con Node.js + Nginx<br>
 
 ## Cómo ejecutar
 
