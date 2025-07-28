@@ -36,3 +36,4 @@ terraform apply
 
 - Los archivos `.tfstate`, `.tfvars` y `.terraform/` no deben subirse al repositorio.
 - Utiliza un archivo `terraform.tfvars` local o variables de entorno para manejar tus credenciales o valores sensibles.
+- El Security Group de la aplicación se expone como app_sg_id y debe usarse como parámetro allowed_sg_id en el módulo security_mongo para habilitar el acceso al puerto 27017 de MongoDB.
