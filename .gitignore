@@ -4,6 +4,7 @@
 *.tfstate.backup
 *.tfvars
 crash.log
+terraform.tfvars
 
 # Archivos del sistema operativo o editores
 .DS_Store
