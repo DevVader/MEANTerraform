@@ -26,6 +26,16 @@ resource "aws_subnet" "public" {
   }
 }
 
+resource "aws_subnet" "public_b" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.public_subnet_cidr_b
+  map_public_ip_on_launch = true
+  availability_zone       = "${var.region}b"
+  tags = {
+    Name = "mean-public-subnet-b"
+  }
+}
+
 resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_cidr
