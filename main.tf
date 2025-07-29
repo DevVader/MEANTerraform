@@ -24,3 +24,24 @@ module "lb" {
   public_subnet_ids = module.network.public_subnet_ids # puedes agregar más si deseas alta disponibilidad
   app_sg_id         = module.security_app.app_sg_id
 }
+
+module "mongo" {
+  source    = "./modules/mongo"
+  subnet_id = module.network.private_subnet_id
+  app_sg_id = module.security_app.app_sg_id
+  key_name  = "test_vm_key"
+}
+
+module "app" {
+  source    = "./modules/app"
+  subnet_id = module.network.public_subnet_ids[0]
+  app_sg_id = module.security_app.app_sg_id
+  key_name  = "test_vm_key"
+}
+
+resource "aws_lb_target_group_attachment" "app_attachment" {
+  target_group_arn = module.lb.app_tg_arn
+  target_id        = module.app.app_id
+  port             = 80
+}
+
